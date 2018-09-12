@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Use system defaults for devs not using AppCompat -->
+    <color name="colorPrimary">#00a056</color>
+    <color name="colorPrimaryDark">#00a056</color>
+    <color name="colorAccent">#00a056</color>
+</resources>

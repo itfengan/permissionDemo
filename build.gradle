@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.novoda:bintray-release:0.8.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    userOrg = 'fenganinfo' //bintray账户下某个组织id
+    repoName = 'maven'
+    groupId = 'com.fengan.lib' //maven仓库下库的包名，一般为模块包名
+    artifactId = 'permission' //项目名称
+    publishVersion = '1.0.0' //版本号
+    desc = 'fengan  permission lib' //项目介绍，可以不写
+    website = 'fengan.info' //项目主页，可以不写
+    licences = ['Apache-2.0']
+}
